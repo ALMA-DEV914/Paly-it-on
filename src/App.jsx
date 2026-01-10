@@ -1,23 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AllSongs } from "./assets/components/AllSongs";
 import { MusicPlayer } from "./assets/components/MusicPlayer";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { Playlists } from "./assets/components/Playlists";
+import "./index.css";
+import { Navbar } from "./assets/components/NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <main className="main">
-        <h1>Welcome to the App</h1>
-        <p>This is the main content area.</p>
-        <MusicPlayer />
-        <div className="content-section">
-          <Routes>
-            <Route path="/music" element={<MusicPlayer />} />
-          </Routes>
-        </div>
-      </main>
-
-    </div>
+    <BrowserRouter>
+   <Navbar />
+      <Routes>
+        <Route path="/" element={<AllSongs />} />
+        <Route path="/allsongs" element={<AllSongs />} />
+        <Route path="/musicplayer" element={<MusicPlayer />} />
+        <Route path="/playlists" element={<Playlists />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-    

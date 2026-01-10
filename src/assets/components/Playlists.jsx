@@ -1,8 +1,8 @@
-export const MusicPlayer = () => {
+export const Playlists = () => {
   return (
     <div>
-      <h2>Music Player Component</h2>
-      {/* Music player implementation goes here */}
+      <h2>Playlists Component</h2>
+      {/* Playlists implementation goes here */}
     </div>
   );
 }
