@@ -224,22 +224,16 @@ h2{
   }
 }
 .div-songs{
-  background: radial-gradient(circle at top left, #ff0080, #1a1a2e);
-  animation: discoBg 8s infinite alternate;
+  
   max-width: 1100px;
   margin: 1.5rem auto;
   padding: 0.8rem 1.2rem;
-}
-@keyframes discoBg {
-  0% {
-    background: radial-gradient(circle at top left, #ff0080, #1a1a2e);
-  }
-  50% {
-    background: radial-gradient(circle at bottom right, #00f2ff, #16213e);
-  }
-  100% {
-    background: radial-gradient(circle at top right, #8aff00, #0f3460);
-  }
+  background: var();
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.4rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(22, 152, 130, 0.6);
 }
 
 .songs-grid {
@@ -261,7 +255,7 @@ h2{
 
 .song-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 35px rgba(255, 0, 255, 0.45);
+  box-shadow: 0 0 35px rgba(73, 123, 109, 0.45);
 }
 .song-card h3 {
   margin: 0;
@@ -288,7 +282,7 @@ h2{
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
   }
   to {
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
+    box-shadow: 0 0 30px rgba(90, 188, 129, 0.6);
   }
 }
 
