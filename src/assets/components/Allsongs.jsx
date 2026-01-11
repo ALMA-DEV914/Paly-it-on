@@ -4,8 +4,8 @@ export const AllSongs = () => {
   const { listSongs } = useMusic();
 
   return (
-    <div>
-      <h2>All Songs Component</h2>
+    <div className="div-songs">
+     <h2>All Songs Component</h2>
       <p>({listSongs.length} songs)</p>
 
       <div className="songs-grid">

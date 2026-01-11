@@ -2,12 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 export const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="logo">
-        <Link to="/">My Music App</Link>
+      <div >
+        <Link className="title" to="/">My Music App</Link>
       </div>
-      <ul className="nav-links">
+      <ul className="navbar-links">
         <li>
-          <NavLink 
+          <NavLink
             to="/allsongs"
             className={({ isActive }) => (isActive ? "active" : "")}
           >

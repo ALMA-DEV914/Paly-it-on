@@ -1,15 +1,17 @@
-import { useState, useRef } from "react";
-import { useMusic } from "../hooks/useMusic";
+import { useState, useRef, useEffect } from "react";
+import { Playlists } from "./Playlists";
 
 export const MusicPlayer = () => {
-  const { listSongs } = useMusic();
-  const [currentSong, setCurrentSong] = useState(null); // currently playing song
+  const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
+  // Play / pause handler
   const playSong = (song) => {
+    if (!song) return;
+
+    // Same song → toggle
     if (currentSong?.id === song.id) {
-      // toggle play/pause
       if (isPlaying) {
         audioRef.current.pause();
         setIsPlaying(false);
@@ -17,38 +19,57 @@ export const MusicPlayer = () => {
         audioRef.current.play();
         setIsPlaying(true);
       }
-    } else {
-      // switch to new song
+    }
+    // New song → load & play
+    else {
       setCurrentSong(song);
       setIsPlaying(true);
-      setTimeout(() => {
-        audioRef.current.play();
-      }, 100); // wait for audio element to update
     }
   };
+
+  // Auto-play when song changes
+  useEffect(() => {
+    if (currentSong && audioRef.current) {
+      audioRef.current.load();
+      audioRef.current.play().catch(() => {});
+    }
+  }, [currentSong]);
 
   return (
     <div className="music-player">
       <h2>Music Player</h2>
-      {listSongs.map((song) => (
-        <div key={song.id} className="song-card">
-          <h3>{song.title}</h3>
-          <p>{song.artist}</p>
-          <p>Duration: {song.duration}</p>
-          <button onClick={() => playSong(song)}>
-            {currentSong?.id === song.id && isPlaying ? "Pause" : "Play"}
-          </button>
-        </div>
-      ))}
 
-      {/* single audio element */}
+      {/* Playlist selector */}
+      <Playlists onSelectSong={playSong} currentSong={currentSong} />
+
+      {/* Now Playing */}
       {currentSong && (
-        <audio
-          ref={audioRef}
-          src={currentSong.url}
-          onEnded={() => setIsPlaying(false)}
-          preload="none"
-        />
+        <div className="card now-playing">
+          <h3>{currentSong.title}</h3>
+          <p>{currentSong.artist}</p>
+
+          {/* Controls */}
+          <div className="controls">
+            <button>⏮</button>
+
+            <button
+              className={`play ${isPlaying ? "playing" : ""}`}
+              onClick={() => playSong(currentSong)}
+            >
+              {isPlaying ? "⏸" : "▶"}
+            </button>
+
+            <button>⏭</button>
+          </div>
+
+          {/* Audio */}
+          <audio
+            ref={audioRef}
+            src={currentSong.url}
+            onEnded={() => setIsPlaying(false)}
+            preload="metadata"
+          />
+        </div>
       )}
     </div>
   );

@@ -4,15 +4,17 @@ import { MusicPlayer } from "./assets/components/MusicPlayer";
 import { Playlists } from "./assets/components/Playlists";
 import "./index.css";
 import { Navbar } from "./assets/components/NavBar";
+import { Homepage } from "./assets/components/Homepage";
 
 function App() {
   return (
     <BrowserRouter>
-   <Navbar />
+      <Navbar />
+
       <Routes>
-        <Route path="/" element={<AllSongs />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/allsongs" element={<AllSongs />} />
-        <Route path="/musicplayer" element={<MusicPlayer />} />
+        <Route path="/music" element={<MusicPlayer />} />
         <Route path="/playlists" element={<Playlists />} />
       </Routes>
     </BrowserRouter>
