@@ -1,8 +1,5 @@
 import  { motion } from "framer-motion";
 
-import notes from "../photos/notes.jpg";
-import notes1 from "../photos/notes1.jpg";
-import notes2 from "../photos/notes2.jpg";
 
 export const Home = () => {
   return (
@@ -24,9 +21,9 @@ export const Home = () => {
 
       {/* Featured Images */}
       <section className="featured">
-        <motion.img src={notes} whileHover={{ scale: 1.05 }} />
-        <motion.img src={notes1} whileHover={{ scale: 1.05 }} />
-        <motion.img src={notes2} whileHover={{ scale: 1.05 }} />
+        <motion.img src="/photos/notes.jpg" whileHover={{ scale: 1.05 }} />
+        <motion.img src="/photos/notes1.jpg" whileHover={{ scale: 1.05 }} />
+        <motion.img src="/photos/notes2.jpg" whileHover={{ scale: 1.05 }} />
       </section>
 
       {/* Features */}

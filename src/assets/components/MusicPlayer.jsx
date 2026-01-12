@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Playlists } from "./Playlists";
 
+
 export const MusicPlayer = () => {
   const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -36,6 +37,8 @@ export const MusicPlayer = () => {
   }, [currentSong]);
 
   return (
+    <div>
+        <h2>Music Player</h2>
     <div className="music-player">
       {/* Playlist selector */}
       <Playlists onSelectSong={playSong} currentSong={currentSong} />
@@ -61,14 +64,19 @@ export const MusicPlayer = () => {
           </div>
 
           {/* Audio */}
+          <div className="audio-card">
           <audio
             ref={audioRef}
             src={currentSong.url}
             onEnded={() => setIsPlaying(false)}
             preload="metadata"
+        
           />
+          <img src="/photos/listen.png" alt="listen icon" className="listen-icon" />
+            </div>
         </div>
       )}
+    </div>
     </div>
   );
 };

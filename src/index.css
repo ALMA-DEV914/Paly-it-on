@@ -15,7 +15,6 @@ body {
   background: radial-gradient(circle at top, #1a1a1a, #0a0a0a);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-main);
-  
 }
 
 .navbar {
@@ -83,17 +82,16 @@ body {
 .navbar a.active::after {
   width: 100%;
 }
-h2{
+h2 {
   color: #00f2ff;
   text-align: center;
   margin: 1.5rem 0;
   padding: 10px;
 }
-.container{
+.container {
   padding: 1rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  
 }
 
 /* ===== MAIN LAYOUT ===== */
@@ -102,7 +100,7 @@ h2{
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 /* ===== CARD BASE ===== */
@@ -116,6 +114,23 @@ h2{
 }
 
 /* ===== NOW PLAYING ===== */
+.now-playing {
+  background: var(--card-bg);
+  height: 300px;
+  border-radius: 20px;
+  margin: 50px;
+}
+.audio-card {
+  margin-top: 2rem;
+  text-align: center;
+}
+.listen-icon {
+  width: 120px;
+  color: #00f2ff;
+
+  margin-top: 1rem;
+  margin: auto;
+}
 .now-playing h2 {
   margin: 0;
   text-align: center;
@@ -166,6 +181,7 @@ h2{
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 20px var(--accent-soft);
+  animation: pulse 2s infinite alternate;
 }
 
 /* ===== SONG LIST ===== */
@@ -209,16 +225,14 @@ h2{
   font-size: 1.2rem;
 }
 
- .music-player {
+.music-player {
   box-shadow: 0 0 30px rgba(46, 204, 113, 0.4);
   border-radius: 20px;
   transition: box-shadow 0.3s ease;
   width: 800px;
   margin: 2rem auto;
   display: flex;
- }
- 
-
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
@@ -226,15 +240,13 @@ h2{
     grid-template-columns: 1fr;
   }
 }
-.div-songs{
-  
+.div-songs {
   max-width: 1100px;
   margin: 1.5rem auto;
-  padding: 0.8rem 1.2rem;
-  background: var();
+  padding: 1.4rem;
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 18px;
-  padding: 1.4rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 10px 40px rgba(22, 152, 130, 0.6);
 }
@@ -244,7 +256,6 @@ h2{
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
-  
 }
 .song-card {
   background: rgba(255, 255, 255, 0.12);
@@ -279,6 +290,14 @@ h2{
 .song-card {
   animation: pulseGlow 4s infinite alternate;
 }
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 15px var(--accent-soft);
+  }
+  to {
+    box-shadow: 0 0 35px rgba(46, 204, 113, 0.6);
+  }
+}
 
 @keyframes pulseGlow {
   from {
@@ -307,7 +326,8 @@ h2{
 }
 
 .hero p {
-  color: #b5b5b5;
+  color: #00f2ff; /* Matches song card h3 glow */
+
   margin-bottom: 2rem;
 }
 
@@ -336,6 +356,7 @@ h2{
   object-fit: cover;
   border-radius: 20px;
 }
+
 
 .features {
   display: grid;
