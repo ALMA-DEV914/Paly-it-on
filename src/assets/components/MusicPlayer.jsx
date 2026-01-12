@@ -37,8 +37,6 @@ export const MusicPlayer = () => {
 
   return (
     <div className="music-player">
-      <h2>Music Player</h2>
-
       {/* Playlist selector */}
       <Playlists onSelectSong={playSong} currentSong={currentSong} />
 

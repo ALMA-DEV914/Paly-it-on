@@ -4,7 +4,7 @@ import { MusicPlayer } from "./assets/components/MusicPlayer";
 import { Playlists } from "./assets/components/Playlists";
 import "./index.css";
 import { Navbar } from "./assets/components/NavBar";
-import { Homepage } from "./assets/components/Homepage";
+import { Home } from "./assets/components/Homepage";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/allsongs" element={<AllSongs />} />
         <Route path="/music" element={<MusicPlayer />} />
         <Route path="/playlists" element={<Playlists />} />

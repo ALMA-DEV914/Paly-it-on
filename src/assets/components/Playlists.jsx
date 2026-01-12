@@ -5,8 +5,8 @@ export const Playlists = ({ onSelectSong, currentSong }) => {
   const { listSongs } = useMusic();
 
   const [playlists] = useState([
-    { id: 1, name: "Favorites", songIds: [1, 3] },
-    { id: 2, name: "Chill", songIds: [2] },
+    { id: 1, name: "Favorites", songIds: [1, 3, 5, 7, 8] },
+    { id: 2, name: "Chill", songIds: [2, 4, 6] },
   ]);
 
   return (

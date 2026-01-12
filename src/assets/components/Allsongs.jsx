@@ -5,7 +5,7 @@ export const AllSongs = () => {
 
   return (
     <div className="div-songs">
-     <h2>All Songs Component</h2>
+     <h2>All Songs</h2>
       <p>({listSongs.length} songs)</p>
 
       <div className="songs-grid">
