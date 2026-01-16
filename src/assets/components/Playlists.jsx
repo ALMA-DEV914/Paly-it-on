@@ -30,7 +30,8 @@ export const Playlists = ({ onSelectSong, currentSong }) => {
                     }`}
                     onClick={() => onSelectSong(song)}
                   >
-                    <span>{song.title}</span>
+                    <span>{song.title}</span>  { " - " }
+                     <span>{song.artist}</span>
                     <button>▶</button>
                   </li>
                 );

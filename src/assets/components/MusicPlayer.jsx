@@ -45,7 +45,7 @@ export const MusicPlayer = () => {
 
       {/* Now Playing */}
       {currentSong && (
-        <div className=" now-playing">
+        <div className="now-playing">
           <h3>{currentSong.title}</h3>
           <p>{currentSong.artist}</p>
 

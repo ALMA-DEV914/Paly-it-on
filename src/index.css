@@ -90,9 +90,10 @@ h2 {
 }
 .container {
   padding: 1rem 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 800px;
+  margin: auto;
   box-shadow: 0 10px 40px rgba(22, 152, 130, 0.6);
+  margin-top: 2rem;
 }
 
 /* ===== MAIN LAYOUT ===== */
@@ -117,11 +118,13 @@ h2 {
 }
 .playlist-card {
   flex-direction: column;
-  align-items: center;
   text-align: center;
+  
+  margin: auto;
 }
 .playlist-card h3 {
   margin: 0.8rem 0 0.4rem;
+  color: #0e5b6e;
 }
 .playlist-card p {
   color: var(--text-muted);
@@ -129,7 +132,7 @@ h2 {
 /* ===== NOW PLAYING ===== */
 .now-playing {
   background: var(--card-bg);
-  height: 300px;
+
   border-radius: 20px;
   padding: 1.5rem;
   backdrop-filter: blur(16px);
@@ -137,17 +140,17 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
+  
 }
 .audio-card {
   margin-top: 2rem;
   text-align: center;
   text-align: center;
+  width: 400px;
 }
 .listen-icon {
-  width: 120px;
+  width: 400px;
   color: #00f2ff;
-
   margin-top: 1rem;
   margin: auto;
 }
@@ -249,7 +252,7 @@ h2 {
   box-shadow: 0 10px 40px rgba(22, 152, 130, 0.6);
   border-radius: 20px;
   transition: box-shadow 0.3s ease;
-  width: 800px;
+  max-width: 1200px;
   margin: 2rem auto;
   display: flex;
 }
@@ -376,7 +379,6 @@ h2 {
   object-fit: cover;
   border-radius: 20px;
 }
-
 
 .features {
   display: grid;
