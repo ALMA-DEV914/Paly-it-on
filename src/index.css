@@ -112,17 +112,36 @@ h2 {
   padding: 1.4rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  margin: 5px;
 }
-
+.playlist-card {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.playlist-card h3 {
+  margin: 0.8rem 0 0.4rem;
+}
+.playlist-card p {
+  color: var(--text-muted);
+}
 /* ===== NOW PLAYING ===== */
 .now-playing {
   background: var(--card-bg);
   height: 300px;
   border-radius: 20px;
-  margin: 50px;
+  padding: 1.5rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(22, 152, 130, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
 }
 .audio-card {
   margin-top: 2rem;
+  text-align: center;
   text-align: center;
 }
 .listen-icon {

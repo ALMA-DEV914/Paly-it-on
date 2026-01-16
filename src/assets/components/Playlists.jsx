@@ -11,9 +11,8 @@ export const Playlists = ({ onSelectSong, currentSong }) => {
 
   return (
     <div className="container">
+      <h2>Playlists</h2>
       <div className="card playlists">
-        <h2>Playlists</h2>
-
         {playlists.map((playlist) => (
           <div key={playlist.id} className="playlist-card">
             <h3>{playlist.name}</h3>
