@@ -124,7 +124,7 @@ h2 {
 }
 .playlist-card h3 {
   margin: 0.8rem 0 0.4rem;
-  color: #0e5b6e;
+  color: #00f2ff; 
 }
 .playlist-card p {
   color: var(--text-muted);
@@ -239,6 +239,11 @@ h2 {
 .song-info span {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+.artist {
+  margin-top: 0.2rem;
+  color: var(--accent);
+  font-size: xx-small;
 }
 
 .song-item button {

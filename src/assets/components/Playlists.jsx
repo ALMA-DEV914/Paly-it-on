@@ -5,8 +5,8 @@ export const Playlists = ({ onSelectSong, currentSong }) => {
   const { listSongs } = useMusic();
 
   const [playlists] = useState([
-    { id: 1, name: "Favorites", songIds: [1, 3, 5, 7, 8] },
-    { id: 2, name: "Chill", songIds: [2, 4, 6] },
+    { id: 1, name: "Favorites ❤️", songIds: [1, 3, 5, 7, 8] },
+    { id: 2, name: "Chill 😎", songIds: [2, 4, 6] },
   ]);
 
   return (
@@ -31,7 +31,7 @@ export const Playlists = ({ onSelectSong, currentSong }) => {
                     onClick={() => onSelectSong(song)}
                   >
                     <span>{song.title}</span>  { " - " }
-                     <span>{song.artist}</span>
+                     <span className="artist">{song.artist}</span>
                     <button>▶</button>
                   </li>
                 );
